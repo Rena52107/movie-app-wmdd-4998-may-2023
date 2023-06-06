@@ -19,7 +19,7 @@ const SearchBox = (props) => {
   const [service, setService] = useState(selectedOption);
 
   return (
-    <Center w='100%'>
+    <Center>
       <VStack
         width='90%'
         mx='3'

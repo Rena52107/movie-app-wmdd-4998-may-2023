@@ -19,10 +19,6 @@ export default function SearchScreen({ navigation }) {
     setQuery(input);
   };
 
-  // useEffect(() => {
-  //   handleSearch();
-  // }, [mediaType]);
-
   const handleSearch = () => {
     setIsLoading(true);
     getSearchResults(mediaType, query)
@@ -44,7 +40,7 @@ export default function SearchScreen({ navigation }) {
     <VStack
       space={3}
       alignSelf='center'
-      marginY='2'
+      margin='2'
     >
       <SearchBox
         query={query}
