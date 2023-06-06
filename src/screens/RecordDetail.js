@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Heading, VStack, Text, Image } from 'native-base';
+import { Heading, VStack, Text, Image, Center, Box } from 'native-base';
 import { getRecord } from '../services/api';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 
@@ -27,18 +27,27 @@ const RecordDetail = (props) => {
 
   return (
     <VStack>
-      <Heading>{record.title || record.name}</Heading>
-      <Image
-        alt={record.title || record.name}
-        source={{
-          uri: `https://image.tmdb.org/t/p/w500${record.poster_path}`,
-        }}
-        size='2xl'
-      />
-      <Text>{record.overview}</Text>
-      <Text>
-        Popularity: {record.popularity} | Release Date: {record.release_date}
-      </Text>
+      <Center
+        height='160'
+        width='100%'
+      >
+        <Heading size='lg'>{record.title || record.name}</Heading>
+      </Center>
+      <Center>
+        <Image
+          alt={record.title || record.name}
+          source={{
+            uri: `https://image.tmdb.org/t/p/w500${record.poster_path}`,
+          }}
+          size='2xl'
+        />
+      </Center>
+      <Box margin='8'>
+        <Text>{record.overview}</Text>
+        <Text paddingY='1'>
+          Popularity: {record.popularity} | Release Date: {record.release_date}
+        </Text>
+      </Box>
     </VStack>
   );
 };
