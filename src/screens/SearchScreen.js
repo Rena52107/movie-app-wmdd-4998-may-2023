@@ -24,7 +24,6 @@ export default function SearchScreen({ navigation }) {
     getSearchResults(mediaType, query)
       .then((response) => {
         setRecords(response);
-        console.log('In SearchScreen, getSearchResults: ', response);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -40,7 +39,6 @@ export default function SearchScreen({ navigation }) {
     <VStack
       space={3}
       alignSelf='center'
-      margin='2'
     >
       <SearchBox
         query={query}

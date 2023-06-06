@@ -20,10 +20,7 @@ const SearchBox = (props) => {
 
   return (
     <Center>
-      <VStack
-        width='90%'
-        mx='3'
-      >
+      <VStack mx='3'>
         <FormControl isRequired>
           <FormControl.Label>Search Moview/TV Show Name</FormControl.Label>
           <Input
@@ -44,7 +41,8 @@ const SearchBox = (props) => {
               <FormControl.Label>Choose Search Type</FormControl.Label>
               <Select
                 selectedValue={service}
-                minWidth='200'
+                minWidth='180'
+                marginRight='4'
                 accessibilityLabel='Choose Service'
                 _selectedItem={{
                   bg: 'teal.600',

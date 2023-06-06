@@ -17,7 +17,6 @@ const RecordDetail = (props) => {
         // setIsLoading(false);
       })
       .catch((error) => {
-        console.log(mediaType, id);
         alert(`Error ${error}`, `Something went wrong! ${error}`);
       });
   }, []);
