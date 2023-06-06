@@ -17,12 +17,12 @@ function AppStack() {
       }}
     >
       <Tab.Screen
-        name='Search Results'
-        component={SearchScreen}
-      />
-      <Tab.Screen
         name='Movies'
         component={MovieScreen}
+      />
+      <Tab.Screen
+        name='Search Results'
+        component={SearchScreen}
       />
       <Tab.Screen
         name='TV Shows'
