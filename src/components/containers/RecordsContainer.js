@@ -1,7 +1,7 @@
 import { Center, Container, Text } from 'native-base';
 import RecordsList from '../lists/RecordsList';
 
-const RecordsContainer = ({ navigation, records,mediaType }) => {
+const RecordsContainer = ({ navigation, records, mediaType }) => {
   return (
     <Container maxWidth='100%'>
         <RecordsList
