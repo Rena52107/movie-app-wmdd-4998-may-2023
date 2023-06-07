@@ -19,6 +19,7 @@ const RecordsList = (props) => {
           mediaType={mediaType || item.media_type}
         />
       )}
+      height='60%'
     />
   );
 };
