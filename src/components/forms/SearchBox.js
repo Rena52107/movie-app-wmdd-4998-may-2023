@@ -17,12 +17,25 @@ const SearchBox = (props) => {
   const { query, onSelectChange, onChangeInput, onSubmit, selectedOption } =
     props;
   const [service, setService] = useState(selectedOption);
+  const [inputError, setInputError] = useState(false);
+
+  const handleSearch = () => {
+    if (!query) {
+      setInputError(true);
+    }
+    if (query && service) {
+      onSubmit();
+    }
+  };
 
   return (
     <Center>
       <VStack mx='3'>
-        <FormControl isRequired>
-          <FormControl.Label>Search Moview/TV Show Name</FormControl.Label>
+        <FormControl
+          isRequired
+          isInvalid={inputError}
+        >
+          <FormControl.Label>Search Movie/TV Show Name</FormControl.Label>
           <Input
             InputLeftElement={
               <Icon
@@ -72,13 +85,19 @@ const SearchBox = (props) => {
                   value='tv'
                 />
               </Select>
-              <FormControl.HelperText
-                _text={{
-                  fontSize: 'xs',
-                }}
-              >
-                Please select a search type
-              </FormControl.HelperText>
+              {inputError ? (
+                <FormControl.ErrorMessage>
+                  Please enter a search query
+                </FormControl.ErrorMessage>
+              ) : (
+                <FormControl.HelperText
+                  _text={{
+                    fontSize: 'xs',
+                  }}
+                >
+                  Please select a search type
+                </FormControl.HelperText>
+              )}
             </Box>
             <Box margin='auto'>
               <Button
@@ -91,7 +110,7 @@ const SearchBox = (props) => {
                     as={<Ionicons name={'ios-search'} />}
                   />
                 }
-                onPress={onSubmit}
+                onPress={handleSearch}
               >
                 Search
               </Button>
