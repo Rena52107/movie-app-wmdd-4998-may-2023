@@ -52,7 +52,6 @@ const TvScreen = ({ navigation }) => {
         navigation={navigation}
         mediaType='tv'
       />
-      <Text>TestMovieScreen</Text>
     </VStack>
   );
 };

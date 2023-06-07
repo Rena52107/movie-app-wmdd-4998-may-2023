@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { SafeAreaView } from 'react-native';
-import { Button, Container } from 'native-base';
+import { Button, Container, ScrollView } from 'native-base';
 import RecordsList from '../lists/RecordsList';
 
 const RecordsContainer = ({ navigation, records, mediaType }) => {
@@ -24,8 +24,7 @@ const RecordsContainer = ({ navigation, records, mediaType }) => {
   };
 
   return (
-    <SafeAreaView>
-      <Container maxWidth='100%'>
+      <Container maxWidth='100%' style={{ flex: 1 }}>
         <RecordsList
           navigation={navigation}
           records={passingData.length > 0 ? passingData : records}
@@ -40,7 +39,6 @@ const RecordsContainer = ({ navigation, records, mediaType }) => {
           Next
         </Button>
       </Container>
-    </SafeAreaView>
   );
 };
 

@@ -52,7 +52,6 @@ const MovieScreen = ({ navigation }) => {
         navigation={navigation}
         mediaType='movie'
       />
-      <Text>TestMovieScreen</Text>
     </VStack>
   );
 };
