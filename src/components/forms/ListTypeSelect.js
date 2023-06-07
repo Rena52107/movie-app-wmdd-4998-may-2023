@@ -1,9 +1,8 @@
-import { useState } from 'react';
 import { Box, Center, CheckIcon, Select } from 'native-base';
 
 const ListTypeSelect = (props) => {
   const { options, onSelectChange, selectedOption } = props;
-  const [service, setService] = useState(selectedOption);
+  const service = selectedOption;
 
   return (
     <Center>

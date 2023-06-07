@@ -2,7 +2,6 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import MovieScreen from '../screens/MovieScreen';
 import SearchScreen from '../screens/SearchScreen';
 import TvScreen from '../screens/TvScreen';
-import { NavigationContainer } from '@react-navigation/native';
 import { Colors } from '../constants/styles';
 
 const Tab = createMaterialTopTabNavigator();

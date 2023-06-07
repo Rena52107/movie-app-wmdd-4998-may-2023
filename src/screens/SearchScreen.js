@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import SearchBox from '../components/forms/SearchBox';
 import { Center, Heading, VStack } from 'native-base';
 import RecordsContainer from '../components/containers/RecordsContainer';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 import { getSearchResults } from '../services/api';
 
-export default function SearchScreen({ navigation }) {
+const SearchScreen = ({ navigation }) => {
   const [mediaType, setMediaType] = useState('multi');
   const [records, setRecords] = useState();
   const [query, setQuery] = useState('');
@@ -62,4 +62,6 @@ export default function SearchScreen({ navigation }) {
       )}
     </VStack>
   );
-}
+};
+
+export default SearchScreen;

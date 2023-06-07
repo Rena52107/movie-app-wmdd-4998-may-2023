@@ -1,4 +1,4 @@
-import { FlatList, Text, Divider } from 'native-base';
+import { FlatList } from 'native-base';
 import RecordCard from '../listitems/RecordCard';
 
 const RecordsList = (props) => {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getRecords } from '../services/api';
-import { Center, VStack, Text, HStack, Spinner, Heading } from 'native-base';
+import { VStack, Text } from 'native-base';
 import ListTypeSelect from '../components/forms/ListTypeSelect';
 import RecordsContainer from '../components/containers/RecordsContainer';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
