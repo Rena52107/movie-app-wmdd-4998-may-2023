@@ -4,25 +4,29 @@ import { getRecord } from '../services/api';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 
 const RecordDetail = (props) => {
-  const { route, navigation } = props;
+  const { route } = props;
   const { id, mediaType } = route.params;
   const [record, setRecord] = useState();
-  // const [isloading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    // setIsLoading(true);
+    setIsLoading(true);
     getRecord(mediaType, id)
       .then((response) => {
         setRecord(response);
-        // setIsLoading(false);
+        setIsLoading(false);
       })
       .catch((error) => {
         alert(`Error ${error}`, `Something went wrong! ${error}`);
       });
   }, []);
 
-  if (!record) {
+  if (isLoading) {
     return <LoadingSpinner />;
+  }
+
+  if (!record) {
+    return null;
   }
 
   return (
